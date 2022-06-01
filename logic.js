@@ -49,12 +49,12 @@ function passwordOption() {
   if (characterAmount === null) {
     // If user cancels initial prompt
     alert('Password Generator Exited');
-    return;
+    return passwordOption();
     // Tells user password parameters and restarts function
   } else if (characterAmount < 8 || characterAmount > 128) {
     alert('Passwords must be between 8 and 128 characters');
     // characterAmount = 0;
-    return;
+    return passwordOption();
   // Tells user to use numbers for selection
   // } else if(typeof characterAmount != 'number') {
   //   alert('You must use numbers for your selection');
@@ -79,7 +79,7 @@ function passwordOption() {
     wantSpecial == false &&
     wantNumber == false) {
       alert("Your password has to be made of something!\nLet's try this again... Shall we?");
-      return;
+      return passwordOption();
     }  
   
   var obj = {
